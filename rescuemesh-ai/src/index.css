@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Login page: compact vertical rhythm on laptop-height screens */
+@custom-variant short (@media (max-height: 920px));
+
+/* Login page surfaces */
+.login-grid {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+}
+
+.login-glow-primary {
+  background: radial-gradient(circle, rgb(37 99 235 / 0.16) 0%, rgb(37 99 235 / 0.05) 40%, transparent 68%);
+}
+
+.login-glow-secondary {
+  background: radial-gradient(circle, rgb(56 189 248 / 0.07) 0%, transparent 65%);
+}
+
+.login-fade-mask {
+  mask-image: radial-gradient(circle, #000 30%, transparent 70%);
+}
+
+.login-card {
+  box-shadow:
+    0 1px 0 0 rgb(255 255 255 / 0.04) inset,
+    0 2px 4px -2px rgb(2 6 23 / 0.5),
+    0 12px 24px -8px rgb(2 6 23 / 0.55),
+    0 32px 64px -24px rgb(2 6 23 / 0.7);
+}
+
+/* Leaflet map custom pin styles */
+.custom-leaflet-marker,
+.custom-individual-marker,
+.custom-cluster-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-pulse-ring {
+  animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Spiderfy connector legs styling */
+.leaflet-cluster-spider-leg {
+  stroke: #475569 !important;
+  stroke-width: 1.5 !important;
+  stroke-dasharray: 4, 3 !important;
+  opacity: 0.85 !important;
+}
+
+/* Custom tooltips for clusters and individual markers */
+.custom-map-individual-tooltip,
+.custom-map-cluster-tooltip {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  padding: 0 !important;
+  color: #0f172a !important;
+}
+
+.custom-map-individual-tooltip::before,
+.custom-map-cluster-tooltip::before {
+  border-top-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Ensure modals and dialogs are always above Leaflet map layers (which use z-400 to z-1000) */
+.emergency-modal-backdrop {
+  z-index: 2000 !important;
+}
+
+.emergency-modal-dialog {
+  z-index: 2001 !important;
+}
+
+/* Contained leaflet map controls */
+.leaflet-container {
+  isolation: isolate;
+}

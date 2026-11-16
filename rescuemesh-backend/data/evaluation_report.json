@@ -1,0 +1,114 @@
+{
+  "dataset_size": 432,
+  "train_samples": 345,
+  "test_samples": 87,
+  "model": "TabPFNClassifier(device='cpu', N_ensemble_configurations=2)",
+  "random_state": 42,
+  "metrics": {
+    "accuracy": 0.896551724137931,
+    "precision_macro": 0.9012394957983193,
+    "precision_weighted": 0.8995450594030716,
+    "recall_macro": 0.8934317694689213,
+    "recall_weighted": 0.896551724137931,
+    "f1_macro": 0.8959027007029227,
+    "f1_weighted": 0.8965751123698231
+  },
+  "confusion_matrix": [
+    [
+      24,
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      23,
+      1,
+      0
+    ],
+    [
+      0,
+      3,
+      15,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      16
+    ]
+  ],
+  "labels": [
+    "CRITICAL",
+    "HIGH",
+    "MEDIUM",
+    "LOW"
+  ],
+  "category_independence_test": [
+    {
+      "description": "Severe Medical",
+      "category": "MEDICAL",
+      "flood_risk": "HIGH",
+      "nearby_sos": 5,
+      "request_age": 30.0,
+      "predicted_priority": "CRITICAL"
+    },
+    {
+      "description": "Isolated Minor Medical",
+      "category": "MEDICAL",
+      "flood_risk": "LOW",
+      "nearby_sos": 0,
+      "request_age": 0.0,
+      "predicted_priority": "HIGH"
+    },
+    {
+      "description": "Severe Flood Rescue",
+      "category": "RESCUE",
+      "flood_risk": "HIGH",
+      "nearby_sos": 4,
+      "request_age": 20.0,
+      "predicted_priority": "CRITICAL"
+    },
+    {
+      "description": "Minor Obstruction Rescue",
+      "category": "RESCUE",
+      "flood_risk": "LOW",
+      "nearby_sos": 0,
+      "request_age": 0.0,
+      "predicted_priority": "LOW"
+    },
+    {
+      "description": "Deprived Flood Cluster Food",
+      "category": "FOOD_WATER",
+      "flood_risk": "HIGH",
+      "nearby_sos": 6,
+      "request_age": 50.0,
+      "predicted_priority": "CRITICAL"
+    },
+    {
+      "description": "Initial Food Request",
+      "category": "FOOD_WATER",
+      "flood_risk": "LOW",
+      "nearby_sos": 0,
+      "request_age": 0.0,
+      "predicted_priority": "LOW"
+    },
+    {
+      "description": "Mass Displacement Shelter",
+      "category": "SHELTER",
+      "flood_risk": "HIGH",
+      "nearby_sos": 7,
+      "request_age": 50.0,
+      "predicted_priority": "HIGH"
+    },
+    {
+      "description": "Initial Shelter Request",
+      "category": "SHELTER",
+      "flood_risk": "LOW",
+      "nearby_sos": 0,
+      "request_age": 0.0,
+      "predicted_priority": "LOW"
+    }
+  ]
+}
